@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-white dark:text-gray-100 dark:bg-zinc-950 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .prose-fumadocs {
+    @apply max-w-none;
+    /* Custom tweaks for dark mode code blocks etc to look more like Fumadocs */
+  }
+  .prose-fumadocs pre {
+    @apply dark:bg-zinc-900/80 bg-zinc-50 border dark:border-zinc-800 border-zinc-200;
+  }
+  .prose-fumadocs code {
+    @apply dark:bg-zinc-900 bg-zinc-100 dark:text-zinc-200 text-zinc-800 px-1 py-0.5 rounded-md font-medium text-sm;
+  }
+  .prose-fumadocs pre code {
+    @apply bg-transparent text-inherit p-0;
+  }
+  .prose-fumadocs a {
+    @apply text-blue-600 dark:text-blue-400 no-underline hover:underline font-medium;
+  }
+  
+  /* Fumadocs-style Admonitions / Callouts */
+  .markdown-alert {
+    @apply my-4 px-4 py-3 rounded-lg border-l-4 text-sm bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200;
+  }
+  .markdown-alert > p.markdown-alert-title {
+    @apply flex items-center font-semibold mb-2 mt-0;
+  }
+  .markdown-alert > p.markdown-alert-title svg {
+    @apply mr-2 w-4 h-4;
+  }
+  .markdown-alert > p:last-child {
+    @apply mb-0;
+  }
+  
+  /* Note */
+  .markdown-alert-note {
+    @apply border-blue-500 bg-blue-50/50 dark:bg-blue-950/30;
+  }
+  .markdown-alert-note .markdown-alert-title {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+  .markdown-alert-note .markdown-alert-title svg {
+    @apply fill-blue-600 dark:fill-blue-400;
+  }
+
+  /* Tip */
+  .markdown-alert-tip {
+    @apply border-green-500 bg-green-50/50 dark:bg-green-950/30;
+  }
+  .markdown-alert-tip .markdown-alert-title {
+    @apply text-green-600 dark:text-green-400;
+  }
+  .markdown-alert-tip .markdown-alert-title svg {
+    @apply fill-green-600 dark:fill-green-400;
+  }
+
+  /* Important */
+  .markdown-alert-important {
+    @apply border-purple-500 bg-purple-50/50 dark:bg-purple-950/30;
+  }
+  .markdown-alert-important .markdown-alert-title {
+    @apply text-purple-600 dark:text-purple-400;
+  }
+  .markdown-alert-important .markdown-alert-title svg {
+    @apply fill-purple-600 dark:fill-purple-400;
+  }
+
+  /* Warning */
+  .markdown-alert-warning {
+    @apply border-amber-500 bg-amber-50/50 dark:bg-amber-950/30;
+  }
+  .markdown-alert-warning .markdown-alert-title {
+    @apply text-amber-600 dark:text-amber-400;
+  }
+  .markdown-alert-warning .markdown-alert-title svg {
+    @apply fill-amber-600 dark:fill-amber-400;
+  }
+
+  /* Caution */
+  .markdown-alert-caution {
+    @apply border-red-500 bg-red-50/50 dark:bg-red-950/30;
+  }
+  .markdown-alert-caution .markdown-alert-title {
+    @apply text-red-600 dark:text-red-400;
+  }
+  .markdown-alert-caution .markdown-alert-title svg {
+    @apply fill-red-600 dark:fill-red-400;
+  }
+
+  .prose-fumadocs blockquote:not(.markdown-alert) {
+    @apply border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-500 py-1 px-4 text-gray-800 dark:text-gray-200 not-italic rounded-r-md;
+  }
+}
