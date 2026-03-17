@@ -98,4 +98,41 @@
   .prose-fumadocs blockquote:not(.markdown-alert) {
     @apply border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-500 py-1 px-4 text-gray-800 dark:text-gray-200 not-italic rounded-r-md;
   }
+
+  /* Task Lists / Checklists */
+  .prose-fumadocs .contains-task-list {
+    @apply list-none pl-0;
+  }
+  .prose-fumadocs .task-list-item {
+    @apply flex items-start space-x-2 my-1;
+  }
+  .prose-fumadocs .task-list-item input[type="checkbox"] {
+    @apply mt-1.5 h-4 w-4 rounded border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-blue-600 focus:ring-blue-500 transition cursor-default;
+  }
+
+  /* Table styles */
+  .prose-fumadocs table {
+    @apply w-full border-collapse my-6 text-sm text-left overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800;
+  }
+  .prose-fumadocs thead {
+    @apply bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800;
+  }
+  .prose-fumadocs th {
+    @apply px-4 py-3 font-semibold text-zinc-900 dark:text-zinc-100;
+  }
+  .prose-fumadocs td {
+    @apply px-4 py-2 border-t border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300;
+  }
+  .prose-fumadocs tr:nth-child(even) {
+    @apply bg-zinc-50/50 dark:bg-zinc-900/30;
+  }
+
+  /* Scrollbar utilities */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
