@@ -54,7 +54,7 @@ export function PreviewPane({ markdown, setMarkdown }: PreviewPaneProps) {
                   <input
                     {...props}
                     disabled={false}
-                    onChange={(e) => {
+                    onChange={() => {
                       // Heuristic: identify which checkbox it is.
                       // This is a bit advanced, but for now let's just make it not disabled
                       // so the user can at least "click" it visually.
