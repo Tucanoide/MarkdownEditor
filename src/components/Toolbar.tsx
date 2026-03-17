@@ -73,7 +73,7 @@ export function Toolbar({ onInsert }: ToolbarProps) {
   };
 
   return (
-    <div className="flex items-center space-x-1 p-2 bg-zinc-50 border-b border-zinc-200 dark:bg-zinc-900/50 dark:border-zinc-800">
+    <div className="flex items-center space-x-1 p-2 bg-zinc-50 border-b border-zinc-200 dark:bg-zinc-900/50 dark:border-zinc-800 overflow-x-auto no-scrollbar relative">
       <Button icon={Heading1} title="Heading 1" onClick={() => onInsert('# ', '')} />
       <Button icon={Heading2} title="Heading 2" onClick={() => onInsert('## ', '')} />
       <Button icon={Heading3} title="Heading 3" onClick={() => onInsert('### ', '')} />
@@ -84,7 +84,7 @@ export function Toolbar({ onInsert }: ToolbarProps) {
       <Button icon={Italic} title="Italic text" onClick={() => onInsert('_', '_', 'italic text')} />
       
       {/* Color Picker */}
-      <div className="relative" ref={colorMenuRef}>
+      <div className="relative flex-shrink-0" ref={colorMenuRef}>
         <button
           onClick={() => setIsColorOpen(!isColorOpen)}
           title="Text Color"
@@ -99,7 +99,11 @@ export function Toolbar({ onInsert }: ToolbarProps) {
         </button>
         
         {isColorOpen && (
-          <div className="absolute top-full left-0 mt-1 p-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-xl z-50 grid grid-cols-4 gap-2 w-40">
+          <div className="fixed mt-1 p-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-xl z-50 grid grid-cols-4 gap-2 w-40"
+               style={{ 
+                 top: colorMenuRef.current?.getBoundingClientRect().bottom ?? 0,
+                 left: colorMenuRef.current?.getBoundingClientRect().left ?? 0
+               }}>
             {COLORS.map((c) => (
               <button
                 key={c.name}

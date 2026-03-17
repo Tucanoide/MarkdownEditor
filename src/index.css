@@ -101,13 +101,16 @@
 
   /* Task Lists / Checklists */
   .prose-fumadocs .contains-task-list {
-    @apply list-none pl-0;
+    @apply list-none pl-0 my-4;
   }
   .prose-fumadocs .task-list-item {
-    @apply flex items-start space-x-2 my-1;
+    @apply flex items-start my-2 transition-colors duration-200 rounded-md;
   }
   .prose-fumadocs .task-list-item input[type="checkbox"] {
-    @apply mt-1.5 h-4 w-4 rounded border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-blue-600 focus:ring-blue-500 transition cursor-default;
+    @apply mt-1 mr-3 h-4 w-4 rounded border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-blue-600 focus:ring-blue-500 transition cursor-pointer;
+  }
+  .prose-fumadocs .task-list-item label {
+    @apply flex-1 cursor-pointer select-none;
   }
 
   /* Table styles */

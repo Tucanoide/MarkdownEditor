@@ -66,7 +66,7 @@ function App() {
 
         {/* Right Pane - Preview */}
         <div className="w-1/2 flex flex-col bg-zinc-50 dark:bg-zinc-950/50 overflow-y-auto">
-          <PreviewPane markdown={markdown} />
+          <PreviewPane markdown={markdown} setMarkdown={setMarkdown} />
         </div>
       </main>
     </div>
